@@ -25,7 +25,7 @@ class Provider extends AbstractProvider implements ProviderInterface
      *
      * @var array
      */
-    protected $scopes = ['email'];
+    protected $scopes = [];
 
     /**
      * {@inheritdoc}
