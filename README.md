@@ -1,4 +1,4 @@
-# Facebook OAuth2 Provider for Laravel Socialite
+# Kinohod SSO OAuth2 Provider for Laravel Socialite
 
 ### 1. Installation
 
