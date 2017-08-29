@@ -37,8 +37,8 @@ For example:
  * @var array
  */
 protected $listen = [
-    SocialiteProviders\Manager\SocialiteWasCalled::class => [
-        AndrewNovikof\SocialiteProviders\Kinohod\KinohodExtendSocialite::class
+    \SocialiteProviders\Manager\SocialiteWasCalled::class => [
+        \AndrewNovikof\SocialiteProviders\Kinohod\KinohodExtendSocialite::class
     ],
 ];
 ```
