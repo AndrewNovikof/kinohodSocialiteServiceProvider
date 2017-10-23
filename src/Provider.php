@@ -33,7 +33,7 @@ class Provider extends AbstractProvider implements ProviderInterface
     protected function getAuthUrl($state)
     {
         return $this->buildAuthUrlFromBase(
-            'https://auth.kinohod.ru/oauth/authorize', $state
+            'https://auth.login.ru/oauth/authorize', $state
         );
     }
 
@@ -42,7 +42,7 @@ class Provider extends AbstractProvider implements ProviderInterface
      */
     protected function getTokenUrl()
     {
-        return 'https://auth.kinohod.ru/oauth/token';
+        return 'https://auth.login.ru/oauth/token';
     }
 
     /**
@@ -51,7 +51,7 @@ class Provider extends AbstractProvider implements ProviderInterface
     protected function getUserByToken($token)
     {
         $response = $this->getHttpClient()->get(
-            'https://auth.kinohod.ru/api/user', [
+            'https://auth.login.ru/api/user', [
             'headers' => [
                 'Authorization' => 'Bearer '.$token,
                 'Accept' => 'application/json',
