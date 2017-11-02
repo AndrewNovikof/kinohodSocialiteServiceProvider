@@ -3,7 +3,6 @@
 namespace AndrewNovikof\SocialiteProviders\Kinohod;
 
 use Laravel\Socialite\Two\ProviderInterface;
-use SocialiteProviders\Manager\OAuth2\User;
 use SocialiteProviders\Manager\OAuth2\AbstractProvider;
 
 class Provider extends AbstractProvider implements ProviderInterface
@@ -18,7 +17,7 @@ class Provider extends AbstractProvider implements ProviderInterface
      *
      * @var array
      */
-    protected $fields = ['uuid', 'name', 'nickname', 'email', 'avatar'];
+    protected $fields = ['uuid', 'name', 'nickname', 'email', 'avatar', 'socialAccount'];
 
     /**
      * The scopes being requested.
@@ -67,11 +66,12 @@ class Provider extends AbstractProvider implements ProviderInterface
     protected function mapUserToObject(array $user)
     {
         return (new User())->setRaw($user)->map([
-            'uuid' => array_get($user, 'uuid'),
+            'id' => array_get($user, 'uuid'),
             'nickname' => array_get($user, 'nickname'),
             'name' => array_get($user, 'name'),
             'email' => array_get($user, 'email'),
             'avatar' => array_get($user, 'avatar'),
+            'socialAccount' => array_get($user, 'socialAccount'),
         ]);
     }
 
